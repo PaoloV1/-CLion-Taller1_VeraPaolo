@@ -218,6 +218,10 @@ void Sistema::moverLadron(int nuevaFila, int nuevaColumna) {
     cout << "Botin acumulado: "<<botin << endl;
 
 }
+
+/**
+ * Metodo que se encargara de la simulacion con el camino optimizado para el ladron
+ */
 void Sistema::simularLadron() {
     int dx[8] = {-1,-1,-1,0,0,1,1,1};
     int dy[8] = {-1,0,1,-1,1,-1,0,1};

@@ -16,7 +16,17 @@ public:
     Nodo<T>* derecha;
     int fila;
     int columna;
+    /**
+     * Constructor default del nodo de la matriz
+     */
     Nodo(): dato(T()), derecha(nullptr), abajo(nullptr), fila(0), columna(0) {}
+
+    /**
+     * Constructor del nodo de la matriz
+     * @param dato
+     * @param fila
+     * @param columna
+     */
     Nodo(T dato, int fila, int columna) {
         this->dato = dato;
         this->fila = fila;
@@ -24,21 +34,48 @@ public:
         this->abajo = nullptr;
         this->derecha = nullptr;
     }
+
+    /**
+     * @return dato
+     */
     T getData() {
         return dato;
     }
+
+    /**
+     * Setter del parametro dato
+     * @param dato
+     */
     void setData(T dato) {
         this->dato = dato;
     }
+
+    /**
+     * @return Nodo que esta abajo del actual
+     */
     Nodo<T> * getDown() {
         return abajo;
     }
+
+    /**
+     * Setter del parametro abajo
+     * @param down
+     */
     void setDown(Nodo<T>* down) {
         this->abajo = abajo;
     }
+
+    /**
+     * @return Nodo que esta a la derecha del actual
+     */
     Nodo<T>* getDerecha() {
         return derecha;
     }
+
+    /**
+     * Setter del parametro derecha
+     * @param derecha
+     */
     void setDerecha(Nodo<T>* derecha) {
         this->derecha = derecha;
     }
@@ -146,7 +183,7 @@ public:
     }
 
     /**
-     * Metodo para obtener el valor de una casa
+     * Metodo para obtener una casa desde la matriz poco poblada
      * @param f fila
      * @param c columna
      */
@@ -166,6 +203,12 @@ public:
         return Casa(); // Si el nodo no existe se retorna un puntero nulo
     }
 
+    /**
+     * Setter para cambiar el dato en la matriz
+     * @param f
+     * @param c
+     * @param dato
+     */
     void set(int f, int c, T dato) {
         // Si se intenta cambiar un nodo cabecera se retorna
         if (f == 0 || c == 0) return;
@@ -183,8 +226,14 @@ public:
             insertar(f, c, dato);
         }
     }
+
+    /**
+     * Metodo que se encargara de motrar la matriz completa considerando las casas que tienen perros y/o alarmas
+     * @param posF Posicion en fila del ladron
+     * @param posC Posicion en columna del ladron
+     */
     void mostrarMatrizEntera(int posF, int posC) {
-        const int ancho = 8; // ancho fijo por celda para alinear
+        const int ancho = 8; // ancho fijo por celda
         for (int i = 0; i < filas; i++) {
             Nodo<T>* actual = aRow[i]->derecha;
 
@@ -213,6 +262,11 @@ public:
         }
     }
 
+    /**
+     * Metodo que se engargara de imprimir por pantalla la matriz poco poblada cuando el modo de simulacion es sin alarmas ni perros
+     * @param posF
+     * @param posC
+     */
     void mostrarMatrizReducida(int posF, int posC) {
         const int ancho = 8; // ancho fijo por celda
 

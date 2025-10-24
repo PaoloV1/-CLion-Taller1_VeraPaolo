@@ -3,6 +3,10 @@
 //
 #include "Sistema.h"
 #include "Interfaz.h"
+
+/**
+ * Constructor de la clase interfaz
+ */
 Interfaz::Interfaz()  {
     casas = new MPP<Casa>(21,21);
     cout << "======== Bienvenido a la simulacion de ladron ========"<<endl;
@@ -44,6 +48,11 @@ Interfaz::Interfaz()  {
     }
 
 }
+
+/**
+ *  Menu "Principal" el cual nos derivara a los otros menus para la simulacion
+ * @param hard booleano que sera true si es que se consideran los perros y alarmas, y false si no
+ */
 void Interfaz::mainMenu(bool hard) {
     int time;
     bool night;
@@ -76,6 +85,12 @@ void Interfaz::mainMenu(bool hard) {
         }
     }
 }
+
+/**
+ * Menu para obtener la posicion inicial del ladron para la simulacion
+ * @param hard
+ * @param night booleano que sera true si es que el usuario decidio que fuera noche, y false si el usuario escogio de dia
+ */
 void Interfaz::positionMenu(bool hard, bool night) {
     int posF;
     int posC;
@@ -110,6 +125,12 @@ void Interfaz::positionMenu(bool hard, bool night) {
 
 
 }
+
+/**
+ * Ultimo menu que dara paso a la simulacion del ladron tomara todas las configuraciones anteriores para que la simulacion se haga bajo esas mismas
+ * @param sistema
+ * @param casas Matriz poco poblada de casas
+ */
 void Interfaz::simulationMenu(Sistema *sistema, MPP<Casa>* casas) {
     if (sistema->getModoConAlarmas()) {
         sistema->mostrarMapaTotal(casas);
