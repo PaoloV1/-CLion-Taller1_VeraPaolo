@@ -12,6 +12,7 @@ private:
     MPP<Casa>* casas;
 public:
     Interfaz();
+    ~Interfaz();
     void mainMenu(bool hard);
     void positionMenu(bool hard, bool night);
     void simulationMenu(Sistema* sistema, MPP<Casa>*casas);

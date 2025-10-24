@@ -113,6 +113,30 @@ public:
     }
 
     /**
+     * Metodo destructor para la matriz poco poblada
+     */
+    ~MPP() {
+        // Liberar nodos reales por fila
+        for (int i = 0; i < filas; i++) {
+            Nodo<T>* actual = aRow[i]->derecha;
+            while (actual != aRow[i]) {
+                Nodo<T>* siguiente = actual->derecha;
+                delete actual;
+                actual = siguiente;
+            }
+            delete aRow[i];
+        }
+
+        // Liberar nodos cabecera de columnas
+        for (int j = 0; j < columnas; j++) {
+            delete aCol[j];
+        }
+
+        delete[] aRow;
+        delete[] aCol;
+    }
+
+    /**
      * @return numero de filas de la matriz
      */
     int getFilas() {

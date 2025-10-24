@@ -50,6 +50,14 @@ Interfaz::Interfaz()  {
 }
 
 /**
+ * Metodo destructor interfaz
+ */
+Interfaz::~Interfaz() {
+    delete casas;
+}
+
+
+/**
  *  Menu "Principal" el cual nos derivara a los otros menus para la simulacion
  * @param hard booleano que sera true si es que se consideran los perros y alarmas, y false si no
  */
@@ -140,6 +148,7 @@ void Interfaz::simulationMenu(Sistema *sistema, MPP<Casa>* casas) {
     }
     cout <<"Numero de movimientos restantes: "<< sistema->getNumMovimientos() << endl;
     sistema->simularLadron();
+    delete sistema;
 }
 
 

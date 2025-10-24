@@ -229,7 +229,7 @@ void Sistema::simularLadron() {
     while (numMovimientos > 0) {
         int mejorFila = -1;
         int mejorCol = -1;
-        double mayorValorEsperado = 0;
+        double mayorValorEsperado = -1;
 
 
         //Se revisan los 8 movimientos posibles
@@ -237,7 +237,7 @@ void Sistema::simularLadron() {
             int newFila = posLadronFila + dx[k];
             int newCol = posLadronCol + dy[k];
 
-            if (newFila < 0 || newFila > 20 || newCol < 0 || newCol > 20) return;
+            if (newFila < 0 || newFila >= 20 || newCol < 0 || newCol >= 20) return;
             Casa c = casas->get(newFila, newCol);
 
             // Si esta en el modo sin alarmas y hay una casa con alarmas se descarta
@@ -268,7 +268,6 @@ void Sistema::simularLadron() {
     }
     cout << "Simulacion terminada, botin total: "<< botin << endl;
 }
-
 
 
 

@@ -26,6 +26,7 @@ private:
 
 public:
     Sistema(int filas, int columnas, int posLadronFila, int posLadronCol,int botin, int numMovimientos, int casasVisitadas, bool esNoche, bool  modoConAlarmas, MPP<Casa>* mpp);
+
     int getPosLadronFila();
     int getPosLadronCol();
     int getBotin();
