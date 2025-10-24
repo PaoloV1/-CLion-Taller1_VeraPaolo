@@ -1,0 +1,3 @@
+Z:/Taller1_Real_EDDS2_2025/cmake-build-debug/CMakeFiles/Taller1_Real_EDDS2_2025.dir
+Z:/Taller1_Real_EDDS2_2025/cmake-build-debug/CMakeFiles/edit_cache.dir
+Z:/Taller1_Real_EDDS2_2025/cmake-build-debug/CMakeFiles/rebuild_cache.dir
